@@ -1,6 +1,7 @@
 package springMVC.controller;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 import org.springframework.stereotype.Controller;
@@ -34,17 +35,13 @@ public class HomeController {
 		model.addObject("rollNumber",188201);
 		return model;
 	}
+	@RequestMapping("/experiment")
 	public ModelAndView experimentt() {
 		ModelAndView model=new ModelAndView();
 		model.setViewName("experiment");
 		model.addObject("name","Akshay Dubey");
 		model.addObject("rollNumber",188201);
-		List<Integer> marks=new ArrayList();
-		marks.add(98);
-		marks.add(91);
-		marks.add(83);
-		marks.add(48);
-		marks.add(69);
+		List<Integer> marks=new ArrayList(Arrays.asList(98,91,83,48,69));
 		model.addObject("marks",marks);
 		return model;
 	}
