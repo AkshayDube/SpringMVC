@@ -6,6 +6,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
+import springMVC.models.User;
+
 @Controller
 public class Signup {
 	@RequestMapping("/signup")
@@ -19,10 +21,17 @@ public class Signup {
 			@RequestParam("password")String password,
 			Model model)
 	{
-		model.addAttribute("email",email);
-		model.addAttribute("username",username);
-		model.addAttribute("password",password);
-		System.out.println(model);
+		User user=new User();
+		user.setEmail(email);
+		user.setPassword(password);
+		user.setUsername(username);
+		
+		model.addAttribute("user", user);
+		
+//		model.addAttribute("email",email);
+//		model.addAttribute("username",username);
+//		model.addAttribute("password",password);
+//		System.out.println(model);
 		return "success";
 	}
 

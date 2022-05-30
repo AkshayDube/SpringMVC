@@ -10,9 +10,9 @@
 </head>
 <body>
 <div class="container mt-5">
-<h1>Email Address is : ${email}</h1>
-<h2>Username is : ${username}</h2>
-<h3>Password : ${password}</h3>
+<h1>Email Address is : ${user.email}</h1>
+<h2>Username is : ${user.username}</h2>
+<h3>Password : ${user.password}</h3>
 </div>
 </body>
 </html>
